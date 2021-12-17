@@ -1,10 +1,32 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useContext } from 'react'
 
+import { peekRight, peekRightCancel } from '../../../animations/peek'
+import { swipeLeft } from '../../../animations/transitions'
+import { setActiveRef } from '../../../context/actions'
+import { Context } from '../../../context/store'
 import './styles.scss'
 
 export const Education = React.forwardRef((props, ref) => {
-  return <section ref={ref} className="education"></section>
+  const { state, dispatch } = useContext(Context)
+  const { homeRef, activeRef } = state
+
+  const onRightPeekClick = () => {
+    swipeLeft(ref.current, homeRef)
+    dispatch(setActiveRef(homeRef))
+  }
+  return (
+    <section ref={ref} className="education">
+      {ref.current === activeRef && (
+        <div
+          className="education__peek-right"
+          onMouseEnter={() => peekRight(ref.current, homeRef)}
+          onMouseLeave={() => peekRightCancel(ref.current, homeRef)}
+          onClick={onRightPeekClick}
+        ></div>
+      )}
+    </section>
+  )
 })
 
 Education.propTypes = {}

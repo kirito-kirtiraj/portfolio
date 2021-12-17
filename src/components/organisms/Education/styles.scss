@@ -3,4 +3,8 @@
 
 .education {
   @include section(0, -100%, $token-color-primary);
+
+  &__peek-right {
+    @include peekRight;
+  }
 }

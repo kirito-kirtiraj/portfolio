@@ -3,4 +3,8 @@
 
 .experience {
   @include section(0, 100%, $token-color-aubergine-mid);
+
+  &__peek-left {
+    @include peekLeft;
+  }
 }

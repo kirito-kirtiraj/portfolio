@@ -3,4 +3,18 @@
 
 .home {
   @include section(0, 0, $token-color-darkest);
+
+  &__peek {
+    &-left {
+      @include peekLeft;
+    }
+
+    &-right {
+      @include peekRight;
+    }
+
+    &-bottom {
+      @include peekBottom;
+    }
+  }
 }
