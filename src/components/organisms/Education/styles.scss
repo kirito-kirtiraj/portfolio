@@ -1,0 +1,6 @@
+@import '../../../assets/scss/mixin.scss';
+@import '../../../assets/scss/tokens.scss';
+
+.education {
+  @include section(0, -100%, $token-color-primary);
+}

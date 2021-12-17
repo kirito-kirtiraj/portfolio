@@ -1,0 +1,6 @@
+@import '../../../assets/scss/mixin.scss';
+@import '../../../assets/scss/tokens.scss';
+
+.experience {
+  @include section(0, 100%, $token-color-aubergine-mid);
+}

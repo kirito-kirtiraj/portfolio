@@ -1,5 +1,8 @@
 @import './assets/scss/tokens.scss';
 
 .App {
-  background-color: $token-color-aubergine-canonical;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }

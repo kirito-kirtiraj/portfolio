@@ -1,0 +1,6 @@
+@import '../../../assets/scss/mixin.scss';
+@import '../../../assets/scss/tokens.scss';
+
+.more {
+  @include section(100%, 0, $token-color-light);
+}
