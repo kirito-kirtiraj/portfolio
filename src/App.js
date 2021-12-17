@@ -1,7 +1,21 @@
+import {
+  Home,
+  Education,
+  Experience,
+  More,
+} from './Components/organisms'
+
 import './App.scss'
 
 function App() {
-  return <div className="App">App</div>
+  return (
+    <main className="App">
+      <Home />
+      <Education />
+      <Experience />
+      <More />
+    </main>
+  )
 }
 
 export default App

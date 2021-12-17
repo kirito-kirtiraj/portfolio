@@ -1,0 +1,6 @@
+@import '../../../assets/scss/mixin.scss';
+@import '../../../assets/scss/tokens.scss';
+
+.home {
+  @include section(0, 0, $token-color-dark);
+}
