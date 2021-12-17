@@ -4,7 +4,16 @@
 .education {
   @include section(0, -100%, $token-color-primary);
 
-  &__peek-right {
-    @include peekRight;
+  &__peek {
+    &-right {
+      @include peekRight;
+    }
+
+    &-text {
+      font-size: $token-font-size-xxxl;
+      opacity: 0;
+      color: $token-color-lightest;
+      transform: rotateZ(90deg);
+    }
   }
 }

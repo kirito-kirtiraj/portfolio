@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 
 import { peekLeft, peekLeftCancel } from '../../../animations/peek'
 import { swipeRight } from '../../../animations/transitions'
@@ -9,6 +9,7 @@ import { Header } from '../../molecules'
 import './styles.scss'
 
 export const Experience = React.forwardRef((props, ref) => {
+  const messageRef = useRef(null)
   const { state, dispatch } = useContext(Context)
   const { homeRef, activeRef } = state
   const onLeftPeekClick = () => {
@@ -21,10 +22,18 @@ export const Experience = React.forwardRef((props, ref) => {
       {ref.current === activeRef && (
         <div
           className="experience__peek-left"
-          onMouseEnter={() => peekLeft(ref.current, homeRef)}
-          onMouseLeave={() => peekLeftCancel(ref.current, homeRef)}
+          onMouseEnter={() =>
+            peekLeft(ref.current, homeRef, messageRef.current)
+          }
+          onMouseLeave={() =>
+            peekLeftCancel(ref.current, homeRef, messageRef.current)
+          }
           onClick={onLeftPeekClick}
-        ></div>
+        >
+          <p ref={messageRef} className="experience__peek-text">
+            Home
+          </p>
+        </div>
       )}
     </section>
   )

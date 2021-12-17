@@ -4,7 +4,16 @@
 .experience {
   @include section(0, 100%, $token-color-aubergine-mid);
 
-  &__peek-left {
-    @include peekLeft;
+  &__peek {
+    &-left {
+      @include peekLeft;
+    }
+
+    &-text {
+      font-size: $token-font-size-xxxl;
+      opacity: 0;
+      color: $token-color-lightest;
+      transform: rotateZ(-90deg);
+    }
   }
 }

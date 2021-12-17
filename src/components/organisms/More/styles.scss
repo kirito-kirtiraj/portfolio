@@ -4,7 +4,16 @@
 .more {
   @include section(100%, 0, $token-color-light);
 
-  &__peek-top {
-    @include peekTop;
+  &__peek {
+    &-top {
+      @include peekTop;
+    }
+
+    &-text {
+      font-size: $token-font-size-xxxl;
+      opacity: 0;
+      color: $token-color-lightest;
+      transform: translateY(-50%);
+    }
   }
 }
