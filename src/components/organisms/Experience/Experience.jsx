@@ -5,6 +5,7 @@ import { peekLeft, peekLeftCancel } from '../../../animations/peek'
 import { swipeRight } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
 import { Context } from '../../../context/store'
+import { Header } from '../../molecules'
 import './styles.scss'
 
 export const Experience = React.forwardRef((props, ref) => {
@@ -16,6 +17,7 @@ export const Experience = React.forwardRef((props, ref) => {
   }
   return (
     <section ref={ref} className="experience">
+      <Header leftText="Home" centerText="Experience" />
       {ref.current === activeRef && (
         <div
           className="experience__peek-left"

@@ -1,0 +1,25 @@
+@import '../../../assets/scss/tokens.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $token-spacing-4 $token-spacing-8 0;
+  color: $token-color-lighter;
+  position: relative;
+
+  &__text {
+    &-side {
+      font-size: $token-font-size-lg;
+      font-weight: $token-font-weight-medium;
+    }
+
+    &-center {
+      font-size: $token-font-size-xl;
+      font-weight: $token-font-weight-medium;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+}

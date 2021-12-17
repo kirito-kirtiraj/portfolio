@@ -17,6 +17,7 @@ import {
 } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
 import './styles.scss'
+import { Header } from '../../molecules'
 
 export const Home = React.forwardRef((props, ref) => {
   const { state, dispatch } = useContext(Context)
@@ -39,6 +40,11 @@ export const Home = React.forwardRef((props, ref) => {
 
   return (
     <section ref={ref} className="home">
+      <Header
+        leftText="Education"
+        centerText="Home"
+        rightText="Experience"
+      />
       {ref.current === activeRef && (
         <>
           <div
@@ -65,6 +71,9 @@ export const Home = React.forwardRef((props, ref) => {
           ></div>
         </>
       )}
+      <footer className="footer">
+        <p>More About Me</p>
+      </footer>
     </section>
   )
 })
