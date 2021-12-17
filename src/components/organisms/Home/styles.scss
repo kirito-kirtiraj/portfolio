@@ -2,5 +2,5 @@
 @import '../../../assets/scss/tokens.scss';
 
 .home {
-  @include section(0, 0, $token-color-dark);
+  @include section(0, 0, $token-color-darkest);
 }
