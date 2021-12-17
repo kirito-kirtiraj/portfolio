@@ -18,3 +18,19 @@
   z-index: 99;
   cursor: pointer;
 }
+
+@mixin peekLeft {
+  @include peek(0, unset, 0, unset, 10vw, 100vh);
+}
+
+@mixin peekRight {
+  @include peek(0, unset, unset, 0, 10vw, 100vh);
+}
+
+@mixin peekBottom {
+  @include peek(unset, 0, 0, unset, 100vw, 20vh);
+}
+
+@mixin peekTop {
+  @include peek(0, unset, 0, unset, 100vw, 20vh);
+}

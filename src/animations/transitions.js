@@ -46,11 +46,11 @@ export const swipeDown = (exitingElement, enteringElement) => {
   gsap.fromTo(
     exitingElement,
     { top: '15%' },
-    { top: '-100%', duration, ease },
+    { top: '100%', duration, ease },
   )
   gsap.fromTo(
     enteringElement,
-    { top: '85%' },
+    { top: '-85%' },
     { top: 0, duration, ease },
   )
 }

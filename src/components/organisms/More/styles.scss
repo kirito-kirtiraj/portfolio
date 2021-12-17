@@ -3,4 +3,8 @@
 
 .more {
   @include section(100%, 0, $token-color-light);
+
+  &__peek-top {
+    @include peekTop;
+  }
 }
