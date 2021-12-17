@@ -19,6 +19,26 @@
     &-bottom {
       @include peekBottom;
     }
+
+    &-text {
+      font-size: $token-font-size-xxxl;
+      opacity: 0;
+
+      &--left {
+        color: $token-color-lightest;
+        transform: rotateZ(-90deg);
+      }
+
+      &--right {
+        color: $token-color-lightest;
+        transform: rotateZ(90deg);
+      }
+
+      &--bottom {
+        margin-top: $token-spacing-8;
+        color: $token-color-darkest;
+      }
+    }
   }
 }
 

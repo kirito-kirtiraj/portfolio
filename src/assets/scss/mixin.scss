@@ -17,6 +17,10 @@
   height: $height;
   z-index: 99;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
 }
 
 @mixin peekLeft {

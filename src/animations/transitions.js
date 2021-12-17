@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 
 const duration = 1
-const ease = 'expo'
+const ease = 'expo.out'
 
 export const swipeLeft = (exitingElement, enteringElement) => {
   gsap.fromTo(

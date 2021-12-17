@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 
 import { peekUp, peekUpCancel } from '../../../animations/peek'
 import { swipeDown, swipeLeft } from '../../../animations/transitions'
@@ -8,6 +8,7 @@ import { Context } from '../../../context/store'
 import './styles.scss'
 
 export const More = React.forwardRef((props, ref) => {
+  const messageRef = useRef(null)
   const { state, dispatch } = useContext(Context)
   const { homeRef, activeRef } = state
   const onTopPeekClick = () => {
@@ -19,10 +20,18 @@ export const More = React.forwardRef((props, ref) => {
       {ref.current === activeRef && (
         <div
           className="more__peek-top"
-          onMouseEnter={() => peekUp(ref.current, homeRef)}
-          onMouseLeave={() => peekUpCancel(ref.current, homeRef)}
+          onMouseEnter={() =>
+            peekUp(ref.current, homeRef, messageRef.current)
+          }
+          onMouseLeave={() =>
+            peekUpCancel(ref.current, homeRef, messageRef.current)
+          }
           onClick={onTopPeekClick}
-        ></div>
+        >
+          <p ref={messageRef} className="more__peek-text">
+            Home
+          </p>
+        </div>
       )}
     </section>
   )
