@@ -1,6 +1,6 @@
 import gsap from 'gsap'
 
-const duration = 1.5
+const duration = 1
 const ease = 'expo'
 
 export const swipeLeft = (exitingElement, enteringElement) => {

@@ -9,6 +9,10 @@ import {
 import { Context } from './context/store'
 import { setActiveRef, setPeek, setRefs } from './context/actions'
 import './App.scss'
+import '@fontsource/ubuntu/300.css'
+import '@fontsource/ubuntu/400.css'
+import '@fontsource/ubuntu/500.css'
+import '@fontsource/ubuntu/700.css'
 
 function App() {
   const home = useRef(null)

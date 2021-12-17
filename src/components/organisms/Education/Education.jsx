@@ -5,6 +5,7 @@ import { peekRight, peekRightCancel } from '../../../animations/peek'
 import { swipeLeft } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
 import { Context } from '../../../context/store'
+import { Header } from '../../molecules'
 import './styles.scss'
 
 export const Education = React.forwardRef((props, ref) => {
@@ -15,8 +16,10 @@ export const Education = React.forwardRef((props, ref) => {
     swipeLeft(ref.current, homeRef)
     dispatch(setActiveRef(homeRef))
   }
+
   return (
     <section ref={ref} className="education">
+      <Header rightText="Home" centerText="Education" />
       {ref.current === activeRef && (
         <div
           className="education__peek-right"
