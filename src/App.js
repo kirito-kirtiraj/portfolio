@@ -9,11 +9,6 @@ import {
 import { Context } from './context/store'
 import { setActiveRef, setPeek, setRefs } from './context/actions'
 import './App.scss'
-// import {
-//   swipeLeft,
-//   swipeRight,
-//   swipeUp,
-// } from './animations/transitions'
 
 function App() {
   const home = useRef(null)

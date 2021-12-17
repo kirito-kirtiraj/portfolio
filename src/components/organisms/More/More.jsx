@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
+
 import { peekUp, peekUpCancel } from '../../../animations/peek'
 import { swipeDown, swipeLeft } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
 import { Context } from '../../../context/store'
-
 import './styles.scss'
 
 export const More = React.forwardRef((props, ref) => {

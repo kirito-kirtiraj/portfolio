@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
+
 import { peekLeft, peekLeftCancel } from '../../../animations/peek'
 import { swipeRight } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
 import { Context } from '../../../context/store'
-
 import './styles.scss'
 
 export const Experience = React.forwardRef((props, ref) => {

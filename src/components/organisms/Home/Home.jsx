@@ -10,13 +10,13 @@ import {
   peekRight,
   peekRightCancel,
 } from '../../../animations/peek'
-import './styles.scss'
 import {
   swipeLeft,
   swipeRight,
   swipeUp,
 } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
+import './styles.scss'
 
 export const Home = React.forwardRef((props, ref) => {
   const { state, dispatch } = useContext(Context)
