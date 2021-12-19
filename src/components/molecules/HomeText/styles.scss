@@ -10,6 +10,7 @@
     font-size: $token-font-size-xxxxxl;
     margin-bottom: $token-spacing-4;
     font-weight: $token-font-weight-bold;
+    opacity: 0;
 
     &--purple {
       color: $token-color-aubergine-light;
@@ -19,6 +20,7 @@
   &__subtitle {
     font-size: $token-font-size-xxxxl;
     font-weight: $token-font-weight-medium;
+    opacity: 0;
 
     &--orange {
       color: $token-color-primary;

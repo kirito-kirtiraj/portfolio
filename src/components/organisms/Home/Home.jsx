@@ -17,10 +17,11 @@ import {
 } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
 import './styles.scss'
-import { Header, HomeText } from '../../molecules'
+import { Header, HomeText, Footer } from '../../molecules'
 import useIsActive from '../../../hooks/useIsActive'
 
 export const Home = React.forwardRef((props, ref) => {
+  const [firstMount, setFirstMount] = useState(true)
   const leftMessageRef = useRef(null)
   const rightMessageRef = useRef(null)
   const bottomMessageRef = useRef(null)
@@ -29,6 +30,12 @@ export const Home = React.forwardRef((props, ref) => {
   const { educationRef, experienceRef, moreRef, activeRef } = state
 
   const isActive = useIsActive(ref.current, activeRef)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFirstMount(false)
+    }, 5000)
+  }, [])
 
   const onLeftPeekClick = () => {
     swipeRight(ref.current, educationRef)
@@ -48,9 +55,11 @@ export const Home = React.forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className={`home + ${!isActive ? ' home--centered' : ''}`}
+      className={`home + ${
+        !isActive || firstMount ? ' home--centered' : ''
+      }`}
     >
-      {isActive && (
+      {isActive && !firstMount && (
         <Header
           leftText="Education"
           centerText="Home"
@@ -58,7 +67,7 @@ export const Home = React.forwardRef((props, ref) => {
         />
       )}
       <HomeText />
-      {isActive && (
+      {isActive && !firstMount && (
         <>
           <div
             className="home__peek-left"
@@ -131,9 +140,9 @@ export const Home = React.forwardRef((props, ref) => {
               More About Me
             </p>
           </div>
-          <footer className="footer">
+          <Footer>
             <p>More About Me</p>
-          </footer>
+          </Footer>
         </>
       )}
     </section>

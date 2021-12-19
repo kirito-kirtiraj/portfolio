@@ -4,11 +4,11 @@ gsap.registerPlugin(CustomEase)
 const duration = 0.5
 const ease = 'power4.out'
 
-const fadeIn = (message) => {
+const customFadeIn = (message) => {
   gsap.to(message, { opacity: 1, duration, ease })
 }
 
-const fadeOut = (message) => {
+const customFadeOut = (message) => {
   gsap.to(message, {
     opacity: 0,
     duration,
@@ -22,7 +22,7 @@ const fadeOut = (message) => {
 export const peekLeft = (activeElement, peekElement, message) => {
   gsap.to(activeElement, { left: '15%', duration, ease })
   gsap.to(peekElement, { left: '-85%', duration, ease })
-  fadeIn(message)
+  customFadeIn(message)
 }
 
 export const peekLeftCancel = (
@@ -32,13 +32,13 @@ export const peekLeftCancel = (
 ) => {
   gsap.to(activeElement, { left: 0, duration, ease })
   gsap.to(peekElement, { left: '-100%', duration, ease })
-  fadeOut(message)
+  customFadeOut(message)
 }
 
 export const peekRight = (activeElement, peekElement, message) => {
   gsap.to(activeElement, { left: '-15%', duration, ease })
   gsap.to(peekElement, { left: '85%', duration, ease })
-  fadeIn(message)
+  customFadeIn(message)
 }
 
 export const peekRightCancel = (
@@ -48,13 +48,13 @@ export const peekRightCancel = (
 ) => {
   gsap.to(activeElement, { left: 0, duration, ease })
   gsap.to(peekElement, { left: '100%', duration, ease })
-  fadeOut(message)
+  customFadeOut(message)
 }
 
 export const peekDown = (activeElement, peekElement, message) => {
   gsap.to(activeElement, { top: '-15%', duration, ease })
   gsap.to(peekElement, { top: '85%', duration, ease })
-  fadeIn(message)
+  customFadeIn(message)
 }
 
 export const peekDownCancel = (
@@ -64,17 +64,17 @@ export const peekDownCancel = (
 ) => {
   gsap.to(activeElement, { top: 0, duration, ease })
   gsap.to(peekElement, { top: '100%', duration, ease })
-  fadeOut(message)
+  customFadeOut(message)
 }
 
 export const peekUp = (activeElement, peekElement, message) => {
   gsap.to(activeElement, { top: '15%', duration, ease })
   gsap.to(peekElement, { top: '-85%', duration, ease })
-  fadeIn(message)
+  customFadeIn(message)
 }
 
 export const peekUpCancel = (activeElement, peekElement, message) => {
   gsap.to(activeElement, { top: 0, duration, ease })
   gsap.to(peekElement, { top: '-100%', duration, ease })
-  fadeOut(message)
+  customFadeOut(message)
 }
