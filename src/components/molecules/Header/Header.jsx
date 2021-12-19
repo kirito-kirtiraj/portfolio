@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types'
+import { useEffect, useRef } from 'react/cjs/react.development'
+import { fadeIn } from '../../../animations/fade'
 
 import './styles.scss'
 
 export const Header = ({ centerText, leftText, rightText }) => {
+  const headerRef = useRef(null)
+
+  useEffect(() => {
+    fadeIn(headerRef.current)
+  }, [])
   return (
-    <header className="header">
+    <header ref={headerRef} className="header">
       <p className="header__text-side">{leftText}</p>
       <p className="header__text-center">{centerText}</p>
       <p className="header__text-side">{rightText}</p>
