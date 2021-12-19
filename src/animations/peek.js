@@ -1,5 +1,6 @@
 import gsap, { CustomEase } from 'gsap/all'
 
+gsap.registerPlugin(CustomEase)
 const duration = 0.5
 const ease = 'power4.out'
 

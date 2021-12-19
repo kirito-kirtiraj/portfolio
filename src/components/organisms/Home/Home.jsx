@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 
 import { Context } from '../../../context/store'
@@ -17,7 +17,8 @@ import {
 } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
 import './styles.scss'
-import { Header } from '../../molecules'
+import { Header, HomeText } from '../../molecules'
+import useIsActive from '../../../hooks/useIsActive'
 
 export const Home = React.forwardRef((props, ref) => {
   const leftMessageRef = useRef(null)
@@ -26,6 +27,8 @@ export const Home = React.forwardRef((props, ref) => {
 
   const { state, dispatch } = useContext(Context)
   const { educationRef, experienceRef, moreRef, activeRef } = state
+
+  const isActive = useIsActive(ref.current, activeRef)
 
   const onLeftPeekClick = () => {
     swipeRight(ref.current, educationRef)
@@ -43,13 +46,19 @@ export const Home = React.forwardRef((props, ref) => {
   }
 
   return (
-    <section ref={ref} className="home">
-      <Header
-        leftText="Education"
-        centerText="Home"
-        rightText="Experience"
-      />
-      {ref.current === activeRef && (
+    <section
+      ref={ref}
+      className={`home + ${!isActive ? ' home--centered' : ''}`}
+    >
+      {isActive && (
+        <Header
+          leftText="Education"
+          centerText="Home"
+          rightText="Experience"
+        />
+      )}
+      <HomeText />
+      {isActive && (
         <>
           <div
             className="home__peek-left"

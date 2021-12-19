@@ -1,0 +1,27 @@
+@import '../../../assets/scss/tokens.scss';
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $token-color-lightest;
+
+  &__title {
+    font-size: $token-font-size-xxxxxl;
+    margin-bottom: $token-spacing-4;
+    font-weight: $token-font-weight-bold;
+
+    &--purple {
+      color: $token-color-aubergine-light;
+    }
+  }
+
+  &__subtitle {
+    font-size: $token-font-size-xxxxl;
+    font-weight: $token-font-weight-medium;
+
+    &--orange {
+      color: $token-color-primary;
+    }
+  }
+}
