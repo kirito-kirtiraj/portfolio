@@ -1,6 +1,7 @@
 @import '../../../assets/scss/tokens.scss';
 
 .education-content {
+  position: relative;
   display: flex;
   flex: 1;
   justify-content: center;
@@ -13,6 +14,9 @@
 
   &__container {
     display: flex;
+    position: relative;
+    padding-left: inherit;
+    padding-right: inherit;
   }
 
   &__heading {

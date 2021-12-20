@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
 import { useEffect, useRef } from 'react'
 import { fadeIn } from '../../../animations/fade'
+import useSlideOut from '../../../hooks/useSlideOut'
 
 import './styles.scss'
 
-export const HomeText = () => {
+export const HomeText = ({ isActive, firstMount }) => {
+  const containerRef = useRef(null)
   const titleRef = useRef(null)
   const subtitleRef = useRef(null)
   const fadeInSubtitle = () => {
@@ -20,8 +22,10 @@ export const HomeText = () => {
       0.5,
     )
   }, [])
+
+  useSlideOut(containerRef, 'homeRef', isActive, firstMount)
   return (
-    <div className="home-text">
+    <div className="home-text" ref={containerRef}>
       <p className="home-text__title" ref={titleRef}>
         Hi, I'm{' '}
         <span className="home-text__title--orange">Kirtiraj</span>
@@ -35,6 +39,9 @@ export const HomeText = () => {
   )
 }
 
-HomeText.propTypes = {}
+HomeText.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  firstMount: PropTypes.bool.isRequired,
+}
 
 HomeText.defaultProps = {}
