@@ -12,8 +12,8 @@
     font-weight: $token-font-weight-bold;
     opacity: 0;
 
-    &--purple {
-      color: $token-color-aubergine-light;
+    &--orange {
+      color: $token-color-primary;
     }
   }
 
@@ -22,8 +22,8 @@
     font-weight: $token-font-weight-medium;
     opacity: 0;
 
-    &--orange {
-      color: $token-color-primary;
+    &--purple {
+      color: $token-color-aubergine-light;
     }
   }
 }

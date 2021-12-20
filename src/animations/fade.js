@@ -8,6 +8,13 @@ export const fadeIn = (
   d = duration,
   e = ease,
   onComplete = () => {},
+  delay = 0,
 ) => {
-  gsap.to(ref, { opacity: 1, duration: d, ease: e, onComplete })
+  gsap.to(ref, {
+    opacity: 1,
+    duration: d,
+    ease: e,
+    onComplete,
+    delay,
+  })
 }

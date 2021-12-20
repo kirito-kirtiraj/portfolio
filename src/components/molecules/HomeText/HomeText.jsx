@@ -12,17 +12,23 @@ export const HomeText = () => {
   }
 
   useEffect(() => {
-    fadeIn(titleRef.current, undefined, undefined, fadeInSubtitle)
+    fadeIn(
+      titleRef.current,
+      undefined,
+      undefined,
+      fadeInSubtitle,
+      0.5,
+    )
   }, [])
   return (
     <div className="home-text">
       <p className="home-text__title" ref={titleRef}>
         Hi, I'm{' '}
-        <span className="home-text__title--purple">Kirtiraj</span>
+        <span className="home-text__title--orange">Kirtiraj</span>
       </p>
       <p className="home-text__subtitle" ref={subtitleRef}>
         A{' '}
-        <span className="home-text__subtitle--orange">Fullstack</span>{' '}
+        <span className="home-text__subtitle--purple">Fullstack</span>{' '}
         Web Developer
       </p>
     </div>

@@ -4,6 +4,7 @@ const useIsActive = (currentRef, activeRef) => {
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
+    if (activeRef === null) return
     if (currentRef === activeRef)
       setTimeout(() => {
         setIsActive(true)
