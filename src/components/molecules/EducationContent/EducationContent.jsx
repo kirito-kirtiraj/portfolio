@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types'
-import { useContext, useRef } from 'react'
-import { useEffect } from 'react/cjs/react.development'
-import { slideIn, slideOut } from '../../../animations/slide'
-import { Context } from '../../../context/store'
+import { useRef } from 'react'
 
 import data from '../../../data/education'
 import useSlideOut from '../../../hooks/useSlideOut'

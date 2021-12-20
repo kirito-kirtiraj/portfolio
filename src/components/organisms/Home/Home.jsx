@@ -66,7 +66,7 @@ export const Home = React.forwardRef((props, ref) => {
           rightText="Experience"
         />
       )}
-      <HomeText />
+      <HomeText isActive={isActive} firstMount={firstMount} />
       {isActive && !firstMount && (
         <>
           <div
