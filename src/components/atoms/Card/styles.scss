@@ -1,0 +1,29 @@
+@import '../../../assets/scss/tokens.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: $token-spacing-8;
+  text-align: center;
+  border-radius: 0.75rem;
+  flex: 0.5;
+
+  &:not(:last-child) {
+    margin-right: $token-spacing-4;
+  }
+
+  &--light {
+    color: $token-color-darkest;
+    background-color: $token-color-lightest;
+  }
+
+  &--orange {
+    color: $token-color-lightest;
+    background-color: $token-color-primary;
+  }
+
+  &--purple {
+    color: $token-color-lightest;
+    background-color: $token-color-aubergine-dark;
+  }
+}

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 
-import { Context } from '../../../context/store'
 import {
   peekDown,
   peekDownCancel,
@@ -15,10 +14,11 @@ import {
   swipeRight,
   swipeUp,
 } from '../../../animations/transitions'
+import { Context } from '../../../context/store'
 import { setActiveRef } from '../../../context/actions'
-import './styles.scss'
 import { Header, HomeText, Footer } from '../../molecules'
 import useIsActive from '../../../hooks/useIsActive'
+import './styles.scss'
 
 export const Home = React.forwardRef((props, ref) => {
   const [firstMount, setFirstMount] = useState(true)

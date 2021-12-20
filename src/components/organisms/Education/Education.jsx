@@ -5,7 +5,8 @@ import { peekRight, peekRightCancel } from '../../../animations/peek'
 import { swipeLeft } from '../../../animations/transitions'
 import { setActiveRef } from '../../../context/actions'
 import { Context } from '../../../context/store'
-import { Header } from '../../molecules'
+import useIsActive from '../../../hooks/useIsActive'
+import { EducationContent, Header } from '../../molecules'
 import './styles.scss'
 
 export const Education = React.forwardRef((props, ref) => {
@@ -18,10 +19,12 @@ export const Education = React.forwardRef((props, ref) => {
     dispatch(setActiveRef(homeRef))
   }
 
+  const isActive = useIsActive(ref.current, activeRef)
+
   return (
     <section ref={ref} className="education">
-      <Header rightText="Home" centerText="Education" />
-      {ref.current === activeRef && (
+      {isActive && <Header rightText="Home" centerText="Education" />}
+      {isActive && (
         <div
           className="education__peek-right"
           onMouseEnter={() =>
@@ -37,6 +40,7 @@ export const Education = React.forwardRef((props, ref) => {
           </p>
         </div>
       )}
+      <EducationContent isActive={isActive} />
     </section>
   )
 })

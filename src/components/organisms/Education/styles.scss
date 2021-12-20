@@ -3,6 +3,8 @@
 
 .education {
   @include section(0, -100%, $token-color-primary);
+  display: flex;
+  flex-direction: column;
 
   &__peek {
     &-right {
