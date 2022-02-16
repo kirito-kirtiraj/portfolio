@@ -9,7 +9,8 @@ const useSlideOut = (
   firstMount = false,
 ) => {
   const { state } = useContext(Context)
-  const { activeRef, educationRef, experienceRef, moreRef } = state
+  const { activeRef, educationRef, experienceRef, moreRef, homeRef } =
+    state
   const parentRef = state[parentRefKey]
 
   useEffect(() => {
@@ -20,13 +21,15 @@ const useSlideOut = (
 
   let toLeft = true
 
-  if (parentRefKey === 'homeRef' && activeRef === educationRef) {
+  if (
+    (parentRefKey === 'homeRef' && activeRef === educationRef) ||
+    (parentRefKey === 'experienceRef' && activeRef === homeRef)
+  ) {
     toLeft = false
   }
 
   useEffect(() => {
     if (moreRef !== null && activeRef === moreRef) return
-    console.log('object')
     if (!isActive && !firstMount)
       slideOut(animatedRef.current, toLeft)
   }, [isActive, firstMount])

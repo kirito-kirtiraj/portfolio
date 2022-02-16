@@ -1,0 +1,45 @@
+@import '../../../assets/scss/tokens.scss';
+
+.experience-content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 0 $token-spacing-10;
+
+  &--padded {
+    padding-top: 34px;
+  }
+
+  &__container {
+    display: flex;
+    position: relative;
+    padding-left: inherit;
+    padding-right: inherit;
+    flex: 1;
+  }
+
+  &__heading {
+    font-size: $token-font-size-xxxl;
+    font-weight: $token-font-weight-light;
+    margin-bottom: $token-spacing-6;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: $token-font-size-lg;
+    font-weight: $token-font-weight-regular;
+    margin-bottom: $token-spacing-4;
+  }
+
+  &__subtitle {
+    font-size: $token-font-size-xxl;
+    font-weight: $token-font-weight-medium;
+    margin-bottom: $token-spacing-4;
+  }
+
+  &__text {
+    margin-top: auto;
+  }
+}
